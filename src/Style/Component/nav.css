@@ -1,0 +1,172 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
+  z-index: 100;
+  padding: 12px 0;
+  box-shadow: none;
+  height: 64px;
+  transition: all 0.4s ease;
+}
+
+/* When user scrolls — Glass effect */
+.navbar.scrolled {
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================== NAVBAR LAYOUT ===================== */
+.navbar-container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  justify-content: center;
+}
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-btn {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  padding: 6px 0;
+}
+
+/* ✨ Underline animation */
+.nav-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: #4f8ad1;
+  transition: width 0.3s ease;
+}
+
+.nav-btn:hover {
+  color: #4f7dd1;
+}
+
+.nav-btn:hover::after,
+.nav-btn.active::after {
+  width: 100%;
+}
+
+.nav-btn.active {
+  color: #4f81d1;
+}
+/* ===================== LOGO ===================== */
+.logo {
+  position: absolute;
+  left: 60px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fdfdfd;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar.scrolled .logo {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================== NAV LINKS ===================== */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.navbar.scrolled .nav-btn {
+  color: #ffffff;
+}
+
+.nav-btn:hover {
+  text-decoration: underline;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* ===================== ENQUIRE BUTTON ===================== */
+.enquire-btn {
+  margin-right: 20px;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.enquire-btn:hover {
+  background: linear-gradient(135deg, #60a5fa, #93c5fd);
+  transform: translateY(-2px);
+}
+
+/* ===================== RESPONSIVE NAV ===================== */
+@media (max-width: 768px) {
+  .nav-links,
+  .enquire-btn {
+    display: none;
+  }
+  .navbar-container {
+
+  margin: 20px;
+
+
+}
+
+  .logo {
+    position: static;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .navbar-left {
+    justify-content: center;
+  }
+}

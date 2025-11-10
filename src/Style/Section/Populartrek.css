@@ -1,0 +1,212 @@
+.tours-section {
+  padding: 30px 10%;
+  background: linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+  color: #222;
+  position: relative;
+  overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* soft pattern highlight */
+.tours-section::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0, 162, 255, 0.05) 0%, transparent 70%);
+  transform: rotate(25deg);
+  z-index: 0;
+}
+.tours-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+}
+.tours-header h2 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #1b1b1b;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+.tours-header h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #0077ff;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+/* ---------- FILTERS ---------- */
+.tours-filters {
+  display: flex;
+  gap: 30px;
+  font-size: 1rem;
+  color: #555;
+  flex-wrap: wrap;
+}
+.tours-filters span {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.tours-filters span.active,
+.tours-filters span:hover {
+  color: #0077ff;
+  font-weight: 600;
+}
+.tours-filters span.active::after,
+.tours-filters span:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #0077ff;
+  border-radius: 2px;
+}
+/* ---------- GRID ---------- */
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+  justify-items: center;
+  position: relative;
+  z-index: 1;
+}
+ 
+/* Responsive columns */
+@media (max-width: 1200px) {
+  .tours-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+ 
+@media (max-width: 900px) {
+  .tours-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+ 
+@media (max-width: 600px) {
+  .tours-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ---------- CARD ---------- */
+.tour-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e5e9f0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+}
+.tour-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  border-color: #d0e6ff;
+}
+/* ---------- IMAGE ---------- */
+.tour-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  border-bottom: 1px solid #eee;
+}
+.tour-card:hover .tour-image img {
+  transform: scale(1.08);
+}
+/* ---------- INFO ---------- */
+.tour-info {
+  padding: 6px 20px;
+}
+.tour-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin : 4px;
+}
+.tour-info p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 3px;
+
+}
+/* ---------- PRICE ---------- */
+.tour-price {
+  font-size: 1.1rem;
+  color: #0077ff;
+  margin-bottom: 4px;
+}
+.tour-price strong {
+  font-size: 1.4rem;
+  margin-right: 3px;
+}
+/* ---------- BUTTON ---------- */
+.tour-btn {
+  background: linear-gradient(135deg, #0077ff, #00b4ff);
+  color: #fff;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-bottom:5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.tour-btn:hover {
+  background: #fff;
+  color: #0077ff;
+  border: 1px solid #0077ff;
+  transform: translateY(-3px);
+}
+/* ---------- RATING ---------- */
+.tour-rating {
+  height: 37px;
+  width: 159px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #222;
+}
+.star {
+  color: #ffb400;
+  font-size: 1rem;
+}
+.tour-rating p {
+  margin: 0;
+  color: #666;
+  font-size: 0.85rem;
+}
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .tours-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .tours-header h2 {
+    font-size: 2rem;
+  }
+  .tours-section {
+    padding: 60px 6%;
+  }
+}
