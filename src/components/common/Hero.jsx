@@ -6,6 +6,8 @@ import AboutSection from "../sections/AboutSection.jsx";
 import mountain from "./Images/mountain.jpg";
 import PopulartrekSection from "../sections/PopulartrekSection.jsx";
 import valley from "./Images/footer.jpg";
+import WhyTrekSection from "../sections/WhyTrekSection.jsx";
+import TestimonialsSection from "../sections/TestimonialsSection.jsx";
 export default function Hero() {
   return (
     <div>
@@ -42,7 +44,8 @@ export default function Hero() {
   image={valley}
   title="Popular Treks" 
 />
-
+        <WhyTrekSection />
+        <TestimonialsSection />
       </div>
   
   );

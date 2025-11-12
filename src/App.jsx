@@ -8,7 +8,7 @@ import PopulartrekSection from "./components/sections/PopulartrekSection";
 import "./App.css";
 import Sidebar from "./components/ui/Modals/Sidebar";
 import ContactSection from "./components/sections/ContactSection";
-
+import TreksSection from "./components/sections/TreksSection";
 export default function App() {
   const [splashDone, setSplashDone] = useState(false);
 
@@ -29,8 +29,8 @@ export default function App() {
                   </>
                 }
               />
-              {/* <Route path="/treks" element={<TreksSection />} />
-              <Route path="/treks/:id" element={<TrekDetails />} />
+              <Route path="/treks" element={<TreksSection />} />
+              {/* <Route path="/treks/:id" element={<TrekDetails />} />
               <Route path="/expeditions" element={<ExpeditionsSection />} />
               <Route path="/hikes" element={<HikesSection />} /> */}
               <Route path="/contact" element={<ContactSection />} />

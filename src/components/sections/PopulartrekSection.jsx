@@ -15,7 +15,7 @@ export default function  PopulartrekSection(image, title) {
       btn: "Explore"
     },
     {
-      image: "/images/hampta.jpg",
+      image: "https://trekthehimalayas.com/images/HamptaPassTrek/Slider/48a112f2-f40e-4dc3-829d-5507a5ad7472_hampta%20pass%20slider%20desk%20(3).webp",
       name: "Hampta Pass",
       desc: "High-altitude beauty of Himachal.",
       price: 699,
@@ -24,7 +24,7 @@ export default function  PopulartrekSection(image, title) {
       btn: "Explore"
     },
         {
-      image: "/images/valley.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZBpgqBq05akeXV9nvYwxfLxritFOB6huNqQ&s",
       name: "Valley of Flowers",
       desc: "Nature’s colorful paradise.",
       price: 599,
@@ -33,7 +33,7 @@ export default function  PopulartrekSection(image, title) {
       btn: "Explore"
     },
     {
-      image: "/images/sandakphu.jpg",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfV4Ly73G7Bb_kxB-tY5h8uhqInLPUE6nsrg&s",
       name: "Sandakphu",
       desc: "See 4 of the 5 tallest peaks.",
       price: 799,

@@ -1,0 +1,40 @@
+.why-trek-section {
+  padding: 80px 20px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.why-trek-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1e293b;
+}
+
+.why-trek-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.why-trek-card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-trek-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.icon {
+  font-size: 2rem;
+  color: #0284c7;
+  margin-bottom: 15px;
+}
+

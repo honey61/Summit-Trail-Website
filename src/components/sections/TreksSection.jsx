@@ -2,22 +2,22 @@ import React, { useState } from "react";
 import { TREKS } from "../../data/treks";
 import "./style.css";
 import Footer from "../common/Footer";
-import TrekDetails from "./TrekDetails";
-import videoFile from "../common/video.mp4"; 
-
+// import TrekDetails from "./TrekDetails";
+import videoFile from "../common/Images/video.mp4";
+ 
 export default function TreksSection() {
   const [filter, setFilter] = useState("all");
   const [selectedTrek, setSelectedTrek] = useState(null); // stores selected trek
-
+ 
   const filtered = TREKS.filter(
     (t) => filter === "all" || t.difficulty.toLowerCase().includes(filter)
   );
-
+ 
   // when detail view is active, show TrekDetails component
-  if (selectedTrek) {
-    return <TrekDetails trek={selectedTrek} onBack={() => setSelectedTrek(null)} />;
-  }
-
+  // if (selectedTrek) {
+  //   return <TrekDetails trek={selectedTrek} onBack={() => setSelectedTrek(null)} />;
+  // }
+ 
   return (
     <div>
       {/* ---------- VIDEO SECTION (shared video) ---------- */}
@@ -41,7 +41,7 @@ export default function TreksSection() {
         </div>
       </section>
       <div className="treks-page">
-
+ 
         <div className="treks-filter-container">
           <label className="filter-label">Filter:</label>
           <select
@@ -58,7 +58,7 @@ export default function TreksSection() {
             <option value="very challenging">Very Challenging</option>
           </select>
         </div>
-
+ 
         <div className="treks-grid">
           {filtered.map((t, index) => (
             <div className="trek-card" key={index}>
@@ -68,7 +68,7 @@ export default function TreksSection() {
   alt={t.name}
   className="trek-image"
 />
-
+ 
               </div>
               <div className="trek-card-details">
                 <h2 className="trek-title">{t.name}</h2>
@@ -77,7 +77,7 @@ export default function TreksSection() {
                 <p><strong>Difficulty:</strong> {t.difficulty}</p>
                 <p><strong>Best Time:</strong> {t.bestTime}</p>
                 <p className="trek-about">{t.about}</p>
-
+ 
                 <button
                   className="detail-btn"
                   onClick={() => setSelectedTrek(t)}

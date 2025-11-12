@@ -1,6 +1,7 @@
 import React from "react";
 import "../../Style/Section/ContactSection.css";
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import Footer from "../common/Footer";
 
 export default function ContactSection() {
   return (
@@ -74,7 +75,9 @@ export default function ContactSection() {
             </div>
           </div>
         </div>
+      
       </section>
+        <Footer />
     </>
   );
 }

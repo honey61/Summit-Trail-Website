@@ -89,7 +89,7 @@ export const TREKS = [
     
     // ✅ Multiple images for the auto-slideshow
     image: [
-      "/images/dayara1.jpg",
+      "..\components\common\Images\footer.jpg",
       "/images/dayara2.jpg",
       "/images/dayara3.jpg"
     ],
