@@ -7,7 +7,7 @@
   color: #fff;
   padding: 20px 10%;
   overflow: hidden;
-  min-height: 80vh; /* ensures full view coverage */
+  min-height: 80vh;
 }
 
 .parallax {
@@ -45,12 +45,37 @@
   gap: 40px;
 }
 
+/* ✨ Scroll Reveal Animation Setup */
+.about-card.hidden {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.about-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌈 Staggered delay for smooth sequence */
+.about-card:nth-child(1).show {
+  transition-delay: 0.1s;
+}
+.about-card:nth-child(2).show {
+  transition-delay: 0.4s;
+}
+.about-card:nth-child(3).show {
+  transition-delay: 0.7s;
+}
+
+/* 🌄 Card base style */
 .about-card {
   flex: 1 1 200px;
   max-width: 30%;
   min-width: 280px;
 }
 
+/* Icon style */
 .icon {
   font-size: 2rem;
   background: rgba(255, 255, 255, 0.1);
@@ -63,6 +88,7 @@
   margin-bottom: 20px;
 }
 
+/* Text */
 .about-card h2 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -75,7 +101,7 @@
   margin-bottom: 10px;
 }
 
-/* 🪶 Smooth mobile fallback */
+/* 🪶 Mobile fallback */
 @media (max-width: 900px) {
   .about-grid {
     gap: 1px;

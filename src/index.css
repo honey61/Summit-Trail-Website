@@ -1,6 +1,10 @@
 body{
     margin: 0px;
-    
+     scroll-behavior: smooth;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 /* App.css */
 

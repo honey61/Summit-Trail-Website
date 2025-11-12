@@ -38,3 +38,80 @@
   margin-bottom: 15px;
 }
 
+
+
+.why-trek-section {
+  padding: 80px 20px;
+  background: #f8fafc;
+  text-align: center;
+  overflow: hidden;
+}
+
+.why-trek-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #1e293b;
+  position: relative;
+}
+
+.why-trek-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #0284c7;
+  border-radius: 2px;
+}
+
+.why-trek-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 🌄 Base Card Style */
+.why-trek-card {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-origin: center;
+}
+
+/* 🌟 Scroll Animation */
+.why-trek-card.hidden {
+  opacity: 0;
+  transform: scale(0.9) translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.why-trek-card.show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* ✨ Staggered Delays */
+.why-trek-card:nth-child(1).show {
+  transition-delay: 0.1s;
+}
+.why-trek-card:nth-child(2).show {
+  transition-delay: 0.3s;
+}
+.why-trek-card:nth-child(3).show {
+  transition-delay: 0.5s;
+}
+.why-trek-card:nth-child(4).show {
+  transition-delay: 0.7s;
+}
+.why-trek-card:nth-child(5).show {
+  transition-delay: 0.9s;
+}
+
+/* 💫*
