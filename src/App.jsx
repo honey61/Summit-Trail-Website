@@ -6,6 +6,8 @@ import Footer from "./components/common/Footer";
 import SplashScreen from "./components/common/SplashScreen";
 import PopulartrekSection from "./components/sections/PopulartrekSection";
 import "./App.css";
+import Sidebar from "./components/ui/Modals/Sidebar";
+import ContactSection from "./components/sections/ContactSection";
 
 export default function App() {
   const [splashDone, setSplashDone] = useState(false);
@@ -14,7 +16,7 @@ export default function App() {
     <div className="app-root">
 
         <div className="min-h-screen bg-gray-50 text-gray-900">
-          {/* <Sidebar /> */}
+          <Sidebar />
           <NavBar />
           <main>
             <Routes>
@@ -30,8 +32,8 @@ export default function App() {
               {/* <Route path="/treks" element={<TreksSection />} />
               <Route path="/treks/:id" element={<TrekDetails />} />
               <Route path="/expeditions" element={<ExpeditionsSection />} />
-              <Route path="/hikes" element={<HikesSection />} />
-              <Route path="/contact" element={<ContactSection />} /> */}
+              <Route path="/hikes" element={<HikesSection />} /> */}
+              <Route path="/contact" element={<ContactSection />} />
             </Routes>
           </main>
         </div>
