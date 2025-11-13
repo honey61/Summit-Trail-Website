@@ -8,6 +8,7 @@ import PopulartrekSection from "../sections/PopulartrekSection.jsx";
 import valley from "./Images/footer.jpg";
 import WhyTrekSection from "../sections/WhyTrekSection.jsx";
 import TestimonialsSection from "../sections/TestimonialsSection.jsx";
+import { Link } from "react-router-dom";
 export default function Hero() {
   return (
     <div>
@@ -24,14 +25,14 @@ export default function Hero() {
   <div className="hero-overlay">
     <div className="hero-content">
       <h1 className="hero-title animate-slide-in">
-        Explore the Himalayas: Treks, Trails & Timeless Adventures
+        Less Screen. More Scene.
       </h1>
       <p className="hero-subtitle animate-fade-in">
-        Discover handcrafted journeys across the mountains — from serene valley walks to high-altitude expeditions, guided by experts and powered by passion.
+       Some moments aren't meant for screen so come live them whith us because the best moments don't happen online they happen out here .
       </p>
-      <div className="hero-buttons">
-  <button className="glass-btn primary-btn">Explore Treks</button>
-  <button className="glass-btn secondary-btn">Contact Us</button>
+  <div className="hero-buttons">
+  <Link to="/treks" className="glass-btn primary-btn">Explore Treks</Link>
+  <Link to="/contact" className="glass-btn secondary-btn">Contact Us</Link>
 </div>
     </div>
   </div>

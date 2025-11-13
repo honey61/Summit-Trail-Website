@@ -1,117 +1,193 @@
-.why-trek-section {
-  padding: 80px 20px;
-  background: #f8fafc;
-  text-align: center;
+/* -----------------------------
+📌 MAIN WRAPPER
+------------------------------*/
+.why-collage-wrapper {
+  width: 100%;
+  height: 80vh;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* start hidden */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
 }
 
-.why-trek-title {
-  font-size: 2rem;
+/* When shown */
+.why-collage-wrapper.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-title {
+  font-size: 28px;
   font-weight: 700;
-  margin-bottom: 40px;
-  color: #1e293b;
+  margin-bottom: 20px;
 }
-
-.why-trek-grid {
+.Why-paragraph{
+  margin: 0px 0px;
+}
+/* -----------------------------
+📌 GRID
+------------------------------*/
+.collage-container {
+  height: 100%;
+  width: 85%;
+  max-width: 1100px;
+  padding : 20px 20px ;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.why-trek-card {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.why-trek-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-}
-
-.icon {
-  font-size: 2rem;
-  color: #0284c7;
-  margin-bottom: 15px;
-}
-
-
-
-.why-trek-section {
-  padding: 80px 20px;
-  background: #f8fafc;
-  text-align: center;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  align-content: stretch;
+  align-items: stretch;
   overflow: hidden;
 }
 
-.why-trek-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 50px;
-  color: #1e293b;
+/* -----------------------------
+📌 COLLAGE ITEM BASE
+------------------------------*/
+.collage-item {
   position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+
+
+  /* Bubble floating animation */
+  animation: bubbleFloat 4s ease-in-out infinite;
 }
 
-.why-trek-title::after {
-  content: "";
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+  transition: 0.6s ease-in-out;
+}
+
+/* Text */
+.collage-text {
   position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background: #0284c7;
-  border-radius: 2px;
+  top: 10px;
+  width: 100%;
+  left : 30px;
+  /* text-align: center; */
+  font-weight: 700;
+  color: white;
+  /* text-shadow: 0px 3px 5px black; */
+  font-size: 20px;
 }
 
-.why-trek-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
+/* -----------------------------
+📌 SIZE CLASSES
+------------------------------*/
+.square {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
-/* 🌄 Base Card Style */
-.why-trek-card {
-  background: white;
-  padding: 30px 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  transform-origin: center;
+.wide {
+  grid-column: span 4;
+  grid-row: span 2;
 }
 
-/* 🌟 Scroll Animation */
-.why-trek-card.hidden {
-  opacity: 0;
-  transform: scale(0.9) translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+.tall {
+  grid-column: span 2;
+  grid-row: span 4;
 }
 
-.why-trek-card.show {
-  opacity: 1;
-  transform: scale(1) translateY(0);
+/* -----------------------------
+📌 BUBBLE FLOAT ANIMATION
+------------------------------*/
+@keyframes bubbleFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-/* ✨ Staggered Delays */
-.why-trek-card:nth-child(1).show {
-  transition-delay: 0.1s;
-}
-.why-trek-card:nth-child(2).show {
-  transition-delay: 0.3s;
-}
-.why-trek-card:nth-child(3).show {
-  transition-delay: 0.5s;
-}
-.why-trek-card:nth-child(4).show {
-  transition-delay: 0.7s;
-}
-.why-trek-card:nth-child(5).show {
-  transition-delay: 0.9s;
+/* bubble delays */
+.collage-item:nth-child(1) { animation-delay: 0s; }
+.collage-item:nth-child(2) { animation-delay: 0.4s; }
+.collage-item:nth-child(3) { animation-delay: 0.8s; }
+.collage-item:nth-child(4) { animation-delay: 1.2s; }
+.collage-item:nth-child(5) { animation-delay: 1.6s; }
+.collage-item:nth-child(6) { animation-delay: 2s; }
+
+/* -----------------------------
+📌 HOVER EFFECTS
+------------------------------*/
+.collage-item:hover img {
+  transform: scale(1.15);
+  filter: brightness(90%);
 }
 
-/* 💫*
+.collage-item:hover {
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  transform: scale(1.03);
+  transition: 0.4s;
+}
+
+/* -----------------------------
+📌 MOBILE
+------------------------------*/
+@media (max-width: 768px) {
+  .why-collage-wrapper {
+    height: auto;
+  }
+
+  .collage-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .wide {
+    grid-column: span 2;
+  }
+}
+/* -----------------------------
+📱 MOBILE — No Gaps (Perfect Tight Collage)
+------------------------------*/
+@media (max-width: 768px) {
+
+  .why-collage-wrapper {
+    height: auto;
+    padding-bottom: 40px;
+  }
+
+  .collage-container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px; /* ⭐ VERY SMALL GAP */
+  }
+
+  /* Remove tall row spans on mobile */
+  .square,
+  .tall,
+  .wide {
+    grid-row: auto !important;
+    height: 180px !important; /* ⭐ uniform height */
+  }
+
+  /* Wide image full width */
+  .wide {
+    grid-column: span 2;
+  }
+
+  /* Hide first image on mobile */
+  .collage-item:first-child {
+    display: none !important;
+  }
+
+  /* Clean image fit */
+  .collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .collage-text {
+    font-size: 12px;
+  }
+}

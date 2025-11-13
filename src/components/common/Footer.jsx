@@ -36,8 +36,7 @@ export default function Footer() {
               <span className="highlight">Summit</span>Trails
             </h2>
             <p>
-              We help people explore the mountains. We give unforgettable
-              adventures and lifelong memories.
+              We make your mountain experience easy ,safe & full of moments you'll never Forget.
             </p>
 
             {/* Call button */}
