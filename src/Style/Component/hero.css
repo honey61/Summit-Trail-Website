@@ -129,3 +129,39 @@
     padding: 0.8rem;
   }
 }
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+
+.glass-btn {
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-size: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.primary-btn {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.12);
+}

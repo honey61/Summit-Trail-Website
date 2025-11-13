@@ -29,6 +29,10 @@ export default function Hero() {
       <p className="hero-subtitle animate-fade-in">
         Discover handcrafted journeys across the mountains — from serene valley walks to high-altitude expeditions, guided by experts and powered by passion.
       </p>
+      <div className="hero-buttons">
+  <button className="glass-btn primary-btn">Explore Treks</button>
+  <button className="glass-btn secondary-btn">Contact Us</button>
+</div>
     </div>
   </div>
 </section>
