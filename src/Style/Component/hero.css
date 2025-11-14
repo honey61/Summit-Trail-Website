@@ -167,3 +167,52 @@
 .secondary-btn {
   background: rgba(255, 255, 255, 0.12);
 }
+/* DROPDOWN MENU CONTAINER */
+.dropdown-menu {
+  margin-top: 15px;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* Hidden by default */
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Open state */
+.dropdown-menu.show {
+  max-height: 350px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Items */
+.dropdown-item {
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Button click styling */
+.dropdown-btn {
+  cursor: pointer;
+}
