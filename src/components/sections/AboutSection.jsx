@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from "react";
 import "../../Style/Section/about.css";
 import { FaMountain, FaLeaf, FaHiking } from "react-icons/fa";
@@ -15,7 +14,7 @@ export default function AboutSection({ image, title }) {
           }
         });
       },
-      { threshold: 0.2 } // triggers animation when 20% visible
+      { threshold: 0.2 }
     );
 
     cardRefs.current.forEach((card) => {
@@ -58,6 +57,7 @@ export default function AboutSection({ image, title }) {
       style={{ backgroundImage: `url(${image})` }}
     >
       <div className="overlay"></div>
+
       <div className="about-container">
         <h1 className="about-title">{title}</h1>
 
@@ -66,18 +66,13 @@ export default function AboutSection({ image, title }) {
             <div
               key={index}
               ref={(el) => (cardRefs.current[index] = el)}
-              className="about-card hidden"
+              className="about-card glass-box hidden"
             >
               <div className="icon">{item.icon}</div>
               <h2>{item.heading}</h2>
               {item.text.map((t, i) => (
                 <p key={i}>{t}</p>
               ))}
-              {item.link && (
-                <a href="#" className="about-link">
-                  {item.link}
-                </a>
-              )}
             </div>
           ))}
         </div>

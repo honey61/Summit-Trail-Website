@@ -114,3 +114,45 @@
     background-position: center center;
   }
 }
+/* ⭐ Glassmorphism Box */
+.glass-box {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+
+/* Hover effect */
+.glass-box:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-6px);
+}
+/* ===========================
+   RESPONSIVE GRID FIX
+=========================== */
+
+/* 🖥 Desktop — already 3 per row because of max-width:30% */
+
+/* 📱 Tablet (2 per row) */
+@media (max-width: 1024px) {
+  .about-grid {
+  gap : 30px;
+  }
+}
+
+/* 📱 Mobile (1 per row) */
+@media (max-width: 600px) {
+  .about-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-card {
+    flex: 1 1 100%; /* full width */
+    max-width: 100%;
+  }
+}

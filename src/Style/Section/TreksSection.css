@@ -1,0 +1,286 @@
+/* ---------- MAIN TREKS SECTION ---------- */
+
+.treks-video-section {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.treks-video {
+  object-fit: cover;
+}
+
+.treks-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.treks-video-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.treks-video-subtitle {
+  font-size: 1.2rem;
+  max-width: 700px;
+  line-height: 1.6;
+  animation: fadeInUp 1.5s ease forwards;
+  color: #f0f0f0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- TREKS PAGE ---------- */
+
+.treks-page {
+  max-width: 1000px;
+  margin: 80px auto 60px;
+  padding: 0 20px;
+}
+
+.treks-page-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1e3a8a;
+}
+
+.treks-page-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ---------- FILTERS ---------- */
+
+.treks-filter-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.filter-label {
+  color: #333;
+  font-weight: 500;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-select:hover {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+/* ---------- TREK GRID ---------- */
+
+.treks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+@media (min-width: 640px) {
+  .treks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .treks-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- TREK CARD ---------- */
+
+.trek-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease;
+
+  /* animation start state */
+  opacity: 0;
+  transform: translateY(60px);
+  will-change: transform, opacity;
+}
+
+.trek-card.show {
+  animation: cardFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes cardFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.98);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(10px) scale(1);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover Effect */
+.trek-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .trek-card {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+.trek-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.trek-image {
+  object-fit: cover;
+}
+
+.trek-card:hover .trek-image {
+  transform: scale(1.07);
+}
+
+.trek-card-details {
+  padding: 20px;
+}
+
+.trek-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.trek-card-details p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 4px 0;
+}
+
+.trek-about {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* ---------- BUTTON ---------- */
+
+.detail-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.detail-btn:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+
+@media (max-width: 768px) {
+  .treks-video-title {
+    font-size: 2rem;
+  }
+
+  .treks-video-subtitle {
+    font-size: 1rem;
+  }
+
+  .treks-page {
+    margin-top: 60px;
+  }
+}
+/* --- FAST SCROLL ANIMATION --- */
+
+.trek-card {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: opacity, transform;
+}
+
+.trek-card.show {
+  animation: cardFastUp 0.45s cubic-bezier(0.25, 0.9, 0.3, 1) forwards;
+}
+
+@keyframes cardFastUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.99);
+    filter: blur(3px);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(5px) scale(1);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -104,8 +104,13 @@ export default function WhyTrekSection() {
 
   return (
     <section className="why-collage-wrapper" id="why-trek">
-      <h2 className="why-title">Why Contact Us</h2>
-      <p className="Why-paragraph">We Provide acessibility support for all our guest</p>
+    <div className="why-header">
+  <h2 className="why-title">Why Choose Us</h2>
+  <p className="why-paragraph">
+    We provide accessibility and complete support for all our guests.
+  </p>
+</div>
+
 
       <div className="collage-container">
         {reasons.map((item, i) => (

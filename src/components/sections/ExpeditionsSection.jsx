@@ -7,7 +7,7 @@ import Footer from "../common/Footer";
 import videoFile from "../common/Images/video.mp4";
 import DetailSection from "./DetailSection";
 
-export default function  HikesSection() {
+export default function ExpeditionsSection() {
   const [filter, setFilter] = useState("all");
   const [selectedTrek, setSelectedTrek] = useState(null);
 
