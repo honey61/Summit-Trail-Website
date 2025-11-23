@@ -1,0 +1,67 @@
+.admin-page {
+  padding: 30px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header a {
+  padding: 10px 14px;
+  background: #2a7a4a;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.list-item {
+  background: #fff;
+  border-radius: 14px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid #e0e7ed;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.actions {
+  margin-left: auto;
+  display: flex;
+  gap: 12px;
+}
+
+.actions a,
+.actions button {
+  background: #2a7a4a;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.actions button {
+  background: #e74c3c;
+}
+
+.actions a:hover,
+.actions button:hover {
+  opacity: 0.85;
+}
