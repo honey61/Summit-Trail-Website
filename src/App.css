@@ -1,0 +1,29 @@
+body{
+  margin:0;
+  padding:0;
+}
+/* App.css */
+/* Smooth background reveal behind splash */
+
+.app-wrapper {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Home screen always there, just blurred/dimmed while splash is active */
+.home-screen {
+  opacity: 1;
+  filter: blur(10px) brightness(0.7);
+  transition: filter 1.2s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+/* When splash is gone, home becomes clear and bright */
+.home-screen.visible {
+  filter: blur(0) brightness(1);
+}
+
+/* Optional slight fade of brightness for nice reveal */
+.home-screen.blurred {
+  filter: blur(6px) brightness(0.75);
+}

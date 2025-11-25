@@ -1,0 +1,237 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+.hero-content {
+  color: #fff;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* ===================== HERO ANIMATIONS ===================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 2s ease-in-out 0.5s forwards;
+  opacity: 0;
+}
+
+.animate-slide-in {
+  animation: slideIn 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* ===================== RESPONSIVE DESIGN ===================== */
+
+/* Tablets and small laptops */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-content {
+    padding: 1.5rem;
+  }
+}
+
+/* Phones (portrait and landscape) */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 100vh; /* Slightly smaller for mobile browsers */
+  }
+
+  .hero-content {
+    max-width: 95%;
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+/* Extra small devices (under 480px) */
+@media (max-width: 480px) {
+  .hero-section {
+    height: 100vh;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-content {
+    padding: 0.8rem;
+  }
+}
+.hero-buttons {
+  text-decoration: none;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;  /* Centers horizontally */
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.glass-btn {
+  text-decoration: none;      /* removes underline */
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-size: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+  display: inline-block;      /* keeps button shape */
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.primary-btn {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.12);
+}
+/* DROPDOWN MENU CONTAINER */
+.dropdown-menu {
+  margin-top: 15px;
+  width: 280px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* Hidden by default */
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: max-height 0.4s ease, opacity 0.3s ease, transform 0.3s ease;
+
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Open state */
+.dropdown-menu.show {
+  max-height: 350px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Items */
+.dropdown-item {
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Button click styling */
+.dropdown-btn {
+  cursor: pointer;
+}
+/* Smooth fade from Hero video to next section */
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 15, 30, 1) 100%
+  );
+
+  z-index: 2;
+  pointer-events: none;
+}
+

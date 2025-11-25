@@ -1,0 +1,214 @@
+/* -----------------------------
+📌 MAIN WRAPPER
+------------------------------*/
+.why-collage-wrapper {
+  width: 100%;
+  height: 80vh;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* start hidden */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+/* When shown */
+.why-collage-wrapper.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+
+  /* ⭐ Center Title */
+  text-align: center;
+  display: block;
+  width: 100%;
+
+  /* ⭐ Underline same as About section */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  margin-left: auto;
+  margin-right: auto;
+  color: #000000;
+}
+
+.why-paragraph {
+   text-align: center;
+  font-size: 1.2rem;
+  color: rgba(10, 10, 10, 0.85);
+  margin-top: 10px;
+  width: 80%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+/* -----------------------------
+📌 GRID
+------------------------------*/
+.collage-container {
+  height: 100%;
+  width: 85%;
+  max-width: 1100px;
+  padding : 20px 0px ;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  align-content: stretch;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* -----------------------------
+📌 COLLAGE ITEM BASE
+------------------------------*/
+.collage-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+
+
+  /* Bubble floating animation */
+  animation: bubbleFloat 4s ease-in-out infinite;
+}
+
+.collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(65%);
+  transition: 0.6s ease-in-out;
+}
+
+/* Text */
+.collage-text {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  left : 30px;
+  /* text-align: center; */
+  font-weight: 700;
+  color: white;
+  /* text-shadow: 0px 3px 5px black; */
+  font-size: 20px;
+}
+
+/* -----------------------------
+📌 SIZE CLASSES
+------------------------------*/
+.square {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.wide {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.tall {
+  grid-column: span 2;
+  grid-row: span 4;
+}
+
+/* -----------------------------
+📌 BUBBLE FLOAT ANIMATION
+------------------------------*/
+@keyframes bubbleFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* bubble delays */
+.collage-item:nth-child(1) { animation-delay: 0s; }
+.collage-item:nth-child(2) { animation-delay: 0.4s; }
+.collage-item:nth-child(3) { animation-delay: 0.8s; }
+.collage-item:nth-child(4) { animation-delay: 1.2s; }
+.collage-item:nth-child(5) { animation-delay: 1.6s; }
+.collage-item:nth-child(6) { animation-delay: 2s; }
+
+/* -----------------------------
+📌 HOVER EFFECTS
+------------------------------*/
+.collage-item:hover img {
+  transform: scale(1.15);
+  filter: brightness(90%);
+}
+
+.collage-item:hover {
+  box-shadow: 0 0 20px rgba(255,255,255,0.4);
+  transform: scale(1.03);
+  transition: 0.4s;
+}
+
+/* -----------------------------
+📌 MOBILE
+------------------------------*/
+@media (max-width: 768px) {
+  .why-collage-wrapper {
+    height: auto;
+  }
+
+  .collage-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .wide {
+    grid-column: span 2;
+  }
+}
+/* -----------------------------
+📱 MOBILE — No Gaps (Perfect Tight Collage)
+------------------------------*/
+@media (max-width: 768px) {
+
+  .why-collage-wrapper {
+    height: auto;
+    /* padding-bottom: 40px; */
+  }
+
+  .collage-container {
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px; /* ⭐ VERY SMALL GAP */
+  }
+
+  /* Remove tall row spans on mobile */
+  .square,
+  .tall,
+  .wide {
+    grid-row: auto !important;
+    height: 180px !important; /* ⭐ uniform height */
+  }
+
+  /* Wide image full width */
+  .wide {
+    grid-column: span 2;
+  }
+
+  /* Hide first image on mobile */
+  .collage-item:first-child {
+    display: none !important;
+  }
+
+  /* Clean image fit */
+  .collage-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .collage-text {
+    font-size: 12px;
+  }
+}

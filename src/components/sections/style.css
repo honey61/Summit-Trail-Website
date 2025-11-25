@@ -1,0 +1,732 @@
+/* ==========================
+   CONTACT SECTION
+========================== */
+/* CONTACT SECTION */
+/* MODERN CONTACT SECTION */
+.modern-contact-section {
+  position: relative;
+  background: linear-gradient(135deg, #dbeafe 0%, #f9fafb 100%);
+  background-image: url("https://images.unsplash.com/photo-1549887534-4b4b5c2a3c7c?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 100px 20px;
+  overflow: hidden;
+}
+
+.contact-overlay {
+  background: rgba(10, 25, 47, 0.7);
+  backdrop-filter: blur(6px);
+  padding: 60px 20px;
+  border-radius: 12px;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+}
+
+/* LEFT SIDE INFO */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.contact-text {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 14px 18px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.contact-detail:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.contact-icon {
+  font-size: 1.6rem;
+  color: #38bdf8;
+}
+
+.contact-detail h4 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.contact-detail p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+/* RIGHT SIDE FORM */
+.contact-form {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px 24px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.contact-form h3 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  outline: none;
+  color: #1e293b;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 0 2px #38bdf8;
+}
+
+.send-btn {
+  background: linear-gradient(90deg, #2563eb, #1e40af);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.send-btn:hover {
+  background: linear-gradient(90deg, #1d4ed8, #1e3a8a);
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-heading {
+    font-size: 2rem;
+  }
+
+  .contact-text {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* ==========================
+   EXPEDITIONS SECTION
+========================== */
+.expeditions-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: #eef2ff;
+  border-radius: 12px;
+}
+
+.expeditions-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.expeditions-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.expeditions-note {
+  font-size: 14px;
+  color: #666;
+}
+
+.expeditions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+@media (min-width: 640px) {
+  .expeditions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .expeditions-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.expedition-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.expedition-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.expedition-image {
+  height: 110px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.expedition-name {
+  font-weight: 600;
+  margin-top: 12px;
+  font-size: 16px;
+}
+
+.expedition-info {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* ==========================
+   HIKES SECTION
+========================== */
+.hikes-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.hikes-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hikes-subtitle {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.hikes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .hikes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hikes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.hike-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hike-name {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.hike-info {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ==========================
+   TREKS SECTION
+========================== */
+/* ---------- VIDEO SECTION ---------- */
+.treks-video-section {
+  position: relative;
+  width: 100%;
+  height: 50vh; /* Half of the screen height */
+  overflow: hidden;
+}
+
+.treks-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.treks-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.6)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.treks-video-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.treks-video-subtitle {
+  font-size: 1.2rem;
+  max-width: 700px;
+  line-height: 1.6;
+  animation: fadeInUp 1.5s ease forwards;
+  color: #f0f0f0;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- MAIN TREKS SECTION ---------- */
+.treks-page {
+  max-width: 1000px;
+  margin: 80px auto 60px; /* balanced spacing */
+  padding: 0 20px;
+}
+
+.treks-page-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #1e3a8a; /* rich blue */
+}
+
+.treks-page-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ---------- FILTER SECTION ---------- */
+.treks-filter-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.filter-label {
+  color: #333;
+  font-weight: 500;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-select:hover {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+/* ---------- TREK GRID ---------- */
+.treks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+@media (min-width: 640px) {
+  .treks-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .treks-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- TREK CARD ---------- */
+.trek-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.trek-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.trek-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.trek-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.trek-card:hover .trek-image {
+  transform: scale(1.07);
+}
+
+.trek-card-details {
+  padding: 20px;
+}
+
+.trek-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.trek-card-details p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 4px 0;
+}
+
+.trek-about {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* ---------- BUTTON ---------- */
+.detail-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.detail-btn:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* ---------- RESPONSIVE TUNING ---------- */
+@media (max-width: 768px) {
+  .treks-video-title {
+    font-size: 2rem;
+  }
+
+  .treks-video-subtitle {
+    font-size: 1rem;
+  }
+
+  .treks-page {
+    margin-top: 60px;
+  }
+}
+
+
+
+
+
+
+/* Trek detail page styles */
+.trek-detail-page {
+
+  font-family: "Inter", sans-serif;
+  color: #1a1a1a;
+  background: #fafafa;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.trek-hero {
+  position: relative;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.trek-hero-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.trek-name-overlay {
+  position: absolute;
+  bottom: 3rem;
+  left: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.back-btn {
+  position:fixed;
+  top: 6rem;
+  left: 1rem;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  z-index: 3;
+}
+
+/* Trek Info Card */
+.trek-info-card {
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  width: 85%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: -2rem auto 1.5rem;
+  position: relative;
+  z-index: 5; /* ensures it sits above image */
+}
+
+/* Info Items */
+.trek-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* Content */
+.trek-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 85%;
+  margin: 0 auto 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.trek-content h3 {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+.highlight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.highlight-tag {
+  background: #e0ecff;
+  color: #2563eb;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Enquire Button */
+.enquire-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 50;
+  margin-top: 5px;
+  transition: background 0.2s ease;
+}
+
+.enquire-btn:hover {
+  background: #1e4ed8;
+}
+
+/* Enquiry Modal */
+.enquiry-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.enquiry-modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+}
+
+.enquiry-modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.enquiry-modal-content input,
+.enquiry-modal-content textarea {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.enquiry-modal-content button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.close-btn {
+  background: #ccc !important;
+  margin-top: 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 931px) {
+  .trek-hero-image {
+    height: 250px;
+  }
+
+  .trek-name-overlay {
+    font-size: 1.6rem;
+    bottom: 3rem;
+    left: 1.2rem;
+  }
+
+  .trek-info-card {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+  }
+
+  .trek-content {
+    width: 90%;
+    padding: 1rem;
+  }
+}
+

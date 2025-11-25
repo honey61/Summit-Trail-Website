@@ -1,0 +1,82 @@
+import React, { useEffect, useRef } from "react";
+import "../../Style/Section/about.css";
+import { FaMountain, FaLeaf, FaHiking } from "react-icons/fa";
+
+export default function AboutSection({ image, title }) {
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    cardRefs.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const aboutItems = [
+    {
+      icon: <FaMountain />,
+      heading: "Our Story",
+      text: [
+        "Summit Trails started in 2025 with a simple idea — to make the mountains feel like home.",
+        "What began as weekend escapes among friends soon grew into a mission to guide adventurers",
+        "safely through some of the most breathtaking trails across the Himalayas and beyond.",
+      ],
+    },
+    {
+      icon: <FaLeaf />,
+      heading: "Our Philosophy",
+      text: [
+        "We believe in slow travel, savouring meaningful moments, and leaving the wild exactly as we found it.",
+      ],
+    },
+    {
+      icon: <FaHiking />,
+      heading: "About the Founder",
+      text: [
+        "For Mr. Ashvin Gurung, Summit Trails is more than just a company. It’s his breakout, his brainchild, and his escape to the beautiful life in the mountains.",
+        "While others rushed through city life, he always found his peace in the stillness of pine forests, the crunch of gravel underfoot, and the quiet power of distant snow-capped peaks.",
+      ],
+    },
+  ];
+
+  return (
+    <section
+      className="about-section"
+      style={{ backgroundImage: `url(${image})` }}
+    >
+      <div className="overlay"></div>
+
+      <div className="about-container">
+        <h1 className="about-title">{title}</h1>
+
+        <div className="about-grid">
+          {aboutItems.map((item, index) => (
+            <div
+              key={index}
+              ref={(el) => (cardRefs.current[index] = el)}
+              className="about-card glass-box hidden"
+            >
+              <div className="icon">{item.icon}</div>
+              <h2>{item.heading}</h2>
+              {item.text.map((t, i) => (
+                <p key={i}>{t}</p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

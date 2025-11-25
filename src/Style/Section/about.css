@@ -1,0 +1,200 @@
+.about-section {
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll; /* ✅ Parallax removed */
+  color: #fff;
+  padding: 20px 10%;
+  overflow: hidden;
+  min-height: 80vh;
+}
+
+
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.about-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.about-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* ✨ Scroll Reveal Animation */
+.about-card.hidden {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.about-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger reveal */
+.about-card:nth-child(1).show {
+  transition-delay: 0.1s;
+}
+.about-card:nth-child(2).show {
+  transition-delay: 0.4s;
+}
+.about-card:nth-child(3).show {
+  transition-delay: 0.7s;
+}
+
+/* Card base */
+.about-card {
+  flex: 1 1 200px;
+  max-width: 30%;
+  min-width: 280px;
+}
+
+/* Icon */
+.icon {
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Text */
+.about-card h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.about-card p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .about-grid {
+    gap: 1px;
+    flex-direction: column;
+  }
+
+  .about-card {
+    max-width: 100%;
+  }
+
+  .about-section {
+    background-attachment: scroll;
+    background-position: center center;
+  }
+}
+/* ⭐ Glassmorphism Box */
+.glass-box {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+
+/* Hover effect */
+.glass-box:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-6px);
+}
+/* ===========================
+   RESPONSIVE GRID FIX
+=========================== */
+
+/* 🖥 Desktop — already 3 per row because of max-width:30% */
+
+/* 📱 Tablet (2 per row) */
+@media (max-width: 1024px) {
+  .about-grid {
+  gap : 30px;
+  }
+}
+
+/* 📱 Mobile (1 per row) */
+@media (max-width: 600px) {
+  .about-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-card {
+    flex: 1 1 100%; /* full width */
+    max-width: 100%;
+  }
+}
+/* Fade-in gradient at the top of About section */
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 15, 30, 1) 0%,
+    rgba(0, 15, 30, 0) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+.about-section {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  /* add dark overlay tint */
+  filter: brightness(0.85);
+}
+/* Soft white fade at the bottom of About -> blends into Popular Trek */
+.about-section::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+

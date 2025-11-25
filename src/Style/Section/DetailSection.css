@@ -1,0 +1,143 @@
+.detail-btn {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.detail-btn:hover {
+  background-color: #256b45;
+}
+.trek-detail-page {
+
+  font-family: "Inter", sans-serif;
+  color: #1a1a1a;
+  background: #fafafa;
+  min-height: 100vh;
+}
+.trek-hero {
+  position: relative;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.trek-hero-image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+.trek-name-overlay {
+  position: absolute;
+  bottom: 3rem;
+  left: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.back-btn {
+  position:fixed;
+  top: 6rem;
+  left: 1rem;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  z-index: 3;
+}
+
+/* Trek Info Card */
+.trek-info-card {
+  background: #fff;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  width: 85%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: -2rem auto 1.5rem;
+  position: relative;
+  z-index: 5; /* ensures it sits above image */
+}
+
+/* Info Items */
+.trek-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+}
+
+/* Content */
+.trek-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 85%;
+  margin: 0 auto 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.trek-content h3 {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+
+.highlight-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.highlight-tag {
+  background: #e0ecff;
+  color: #2563eb;
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Shared button style for consistency */
+.book-btn,
+.enquire-btn {
+  background: #2563eb;           /* Blue theme */
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.book-btn:hover,
+.enquire-btn:hover {
+  background: #1e4ed8;
+  transform: translateY(-2px);
+}
+
+/* Click effect */
+.book-btn:active,
+.enquire-btn:active {
+  transform: scale(0.97);
+}
