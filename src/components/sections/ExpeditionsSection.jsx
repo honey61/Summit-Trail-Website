@@ -1,27 +1,34 @@
-
-
 import React, { useState, useEffect } from "react";
-import { TREKS } from "../../data/treks";
 import "../../Style/Section/TreksSection.css";
 import Footer from "../common/Footer";
 import videoFile from "../common/Images/video.mp4";
 import DetailSection from "./DetailSection";
+import api from "../../../admin/src/api"; // FIXED PATH
 
 export default function ExpeditionsSection() {
+  const [items, setItems] = useState([]);
   const [filter, setFilter] = useState("all");
-  const [selectedTrek, setSelectedTrek] = useState(null);
+  const [selected, setSelected] = useState(null);
 
-  const filtered = TREKS.filter(
-    (t) => filter === "all" || t.difficulty.toLowerCase().includes(filter)
+  /* ---------- Load Expeditions ---------- */
+  useEffect(() => {
+    api.get("/expeditions/featured")
+      .then(res => setItems(res.data))
+      .catch(err => console.log("Error loading expeditions:", err));
+  }, []);
+
+  /* ---------- Filter ---------- */
+  const filtered = items.filter(
+    t => filter === "all" || t.difficulty?.toLowerCase().includes(filter)
   );
 
-  /* ---------- Scroll Animation Logic ---------- */
+  /* ---------- Scroll Animation ---------- */
   useEffect(() => {
     const cards = document.querySelectorAll(".trek-card");
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      entries => {
+        entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
             observer.unobserve(entry.target);
@@ -32,71 +39,69 @@ export default function ExpeditionsSection() {
     );
 
     cards.forEach((card, i) => {
-      card.style.animationDelay = `${i * 0.10}s`;
+      card.style.animationDelay = `${i * 0.1}s`;
       observer.observe(card);
     });
+
+    return () => observer.disconnect();
   }, [filtered]);
 
-  if (selectedTrek) {
-    return <DetailSection trek={selectedTrek} onBack={() => setSelectedTrek(null)} />;
+  /* ---------- Detail View ---------- */
+  if (selected) {
+    return <DetailSection trek={selected} onBack={() => setSelected(null)} />;
   }
 
   return (
     <div>
-      {/* -------- VIDEO SECTION -------- */}
       <section className="treks-video-section">
         <video className="treks-video" src={videoFile} autoPlay loop muted playsInline />
         <div className="treks-video-overlay">
-          <h1 className="treks-video-title">All Treks</h1>
-          <p className="treks-video-subtitle">
-            Some walks change your day and some change your life...
-          </p>
+          <h1 className="treks-video-title">All Expeditions</h1>
         </div>
       </section>
 
       <div className="treks-page">
-        {/* -------- FILTER -------- */}
+
+        {/* FILTER */}
         <div className="treks-filter-container">
           <label className="filter-label">Filter:</label>
-          <select
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className="filter-select"
-          >
+          <select value={filter} onChange={e => setFilter(e.target.value)} className="filter-select">
             <option value="all">All</option>
             <option value="easy">Easy</option>
-            <option value="easy–moderate">Easy–Moderate</option>
             <option value="moderate">Moderate</option>
-            <option value="moderate–challenging">Moderate–Challenging</option>
-            <option value="challenging">Challenging</option>
-            <option value="very challenging">Very Challenging</option>
+            <option value="hard">Hard</option>
           </select>
         </div>
 
-        {/* -------- TREKS GRID -------- */}
+        {/* GRID */}
         <div className="treks-grid">
           {filtered.map((t, index) => (
-            <div className="trek-card" key={index}>
+            <div className="trek-card" key={t._id || index}>
               <div className="trek-image-container">
                 <img
-                  src={t.image?.[0] || "/images/default-trek.jpg"}
-                  alt={t.name}
+                  src={t.image || "/images/default-trek.jpg"}
+                  alt={t.title}
                   className="trek-image"
                 />
               </div>
 
               <div className="trek-card-details">
-                <h2 className="trek-title">{t.name}</h2>
-                <p><strong>Altitude:</strong> {t.altitude}</p>
-                <p><strong>Region:</strong> {t.region}</p>
-                <p><strong>Difficulty:</strong> {t.difficulty}</p>
-                <p><strong>Best Time:</strong> {t.bestTime}</p>
-                <p className="trek-about">{t.about}</p>
+                <h2 className="trek-title">{t.title}</h2>
 
-                <button className="detail-btn" onClick={() => setSelectedTrek(t)}>
+                {t.country && <p><strong>Country:</strong> {t.country}</p>}
+                {t.peakHeight && <p><strong>Peak Height:</strong> {t.peakHeight}</p>}
+                {t.duration && <p><strong>Duration:</strong> {t.duration}</p>}
+                {t.difficulty && <p><strong>Difficulty:</strong> {t.difficulty}</p>}
+
+                {t.description && (
+                  <p className="trek-about">{t.description.slice(0, 100)}...</p>
+                )}
+
+                <button className="detail-btn" onClick={() => setSelected(t)}>
                   View Details
                 </button>
               </div>
+
             </div>
           ))}
         </div>

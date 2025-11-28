@@ -8,7 +8,7 @@ export default function Sidebar() {
   const [openTreks, setOpenTreks] = useState(
     pathname.startsWith("/treks") ||
     pathname.startsWith("/hikes") ||
-    pathname.startsWith("/expedition") ||
+    pathname.startsWith("/expeditions") ||
     pathname.startsWith("/climbing")
   );
 
@@ -42,7 +42,7 @@ export default function Sidebar() {
             <div className="submenu">
               <Link to="/treks" className={pathname.startsWith("/treks") ? "active" : ""}>Treks</Link>
               <Link to="/hikes" className={pathname.startsWith("/hikes") ? "active" : ""}>Hikes</Link>
-              <Link to="/expedition" className={pathname.startsWith("/expedition") ? "active" : ""}>Expedition</Link>
+              <Link to="/expeditions" className={pathname.startsWith("/expeditions") ? "active" : ""}>Expeditions</Link>
               <Link to="/climbing" className={pathname.startsWith("/climbing") ? "active" : ""}>Climbing</Link>
             </div>
           )}

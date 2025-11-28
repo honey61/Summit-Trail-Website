@@ -12,15 +12,16 @@ export default function TreksSection() {
 
   /* ---------- Load Treks From Backend ---------- */
   useEffect(() => {
-    api.get("/treks")
+    api.get("/treks/featured")
       .then(res => setTreks(res.data))
       .catch(err => console.log("Error loading treks:", err));
   }, []);
 
   /* ---------- Filter Logic ---------- */
-  const filtered = treks.filter(
-    t => filter === "all" || t.difficulty?.toLowerCase().includes(filter)
-  );
+ const filtered = treks
+  .sort((a, b) => (b.featured === true) - (a.featured === true)) 
+  .filter(t => filter === "all" || t.difficulty?.toLowerCase().includes(filter));
+
 
   /* ---------- Scroll Animation Logic ---------- */
   useEffect(() => {

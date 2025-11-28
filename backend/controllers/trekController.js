@@ -1,11 +1,14 @@
 const Trek = require('../models/Trek');
 
-exports.list = async (req,res) => {
+exports.list = async (req, res) => {
   try {
-    const treks = await Trek.find().sort({ featured: -1, createdAt: -1 });
+    const treks = await Trek.find().sort({ createdAt: -1 });
     res.json(treks);
-  } catch (err) { res.status(500).json({ message: 'Server error' }); }
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
 };
+
 
 exports.get = async (req,res) => {
   try {
@@ -36,3 +39,13 @@ exports.remove = async (req,res) => {
     res.json({ message: 'Deleted' });
   } catch (err) { res.status(500).json({ message: 'Server error' }); }
 };
+
+exports.featured = async (req, res) => {
+  try {
+    const treks = await Trek.find({ featured: true }).sort({ createdAt: -1 });
+    res.json(treks);
+  } catch (err) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
