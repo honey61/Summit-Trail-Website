@@ -6,8 +6,9 @@ import Dashboard from './pages/Dashboard';
 import Treks from './pages/Treks';
 import TrekForm from './pages/TrekForm';
 import Bookings from './pages/Bookings';
+import api, { setToken } from './api';
 import Leads from './pages/Leads';
-import LeadForm from './pages/LeadForm';
+import LeadForm from './pages/LeadForm
 
 import api, { setToken } from './api';
 
@@ -28,7 +29,9 @@ function App(){
   return (
     <Routes>
 
-      <Route path="/dashboard" element={ token ? <Dashboard /> : <Navigate to="/login" /> } />
+      
+        <Route path="/dashboard" element={ token ? <Dashboard /> : <Navigate to="/login" /> } />
+
       <Route path="/login" element={<Login onLogin={(t)=>{ setLocalToken(t); localStorage.setItem('adminToken', t); setToken(t); }} />} />
       <Route path="/" element={ token ? <Dashboard /> : <Navigate to="/login" /> } />
 
@@ -53,6 +56,7 @@ function App(){
       {/* Leads */}
       <Route path="/lead" element={ token ? <Leads /> : <Navigate to="/login" /> } />
       <Route path="/lead/:id" element={ token ? <LeadForm /> : <Navigate to="/login" /> } />
+    
 
     </Routes>
   );

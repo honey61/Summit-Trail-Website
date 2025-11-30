@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+import React, { useEffect, useState } from "react";
+import api from "../api";
+
+import "../Style/Admin/Bookings.css";
+
+=======
 // import React, { useEffect, useState } from "react";
 // import api from "../api";
 
@@ -47,6 +54,7 @@ import api from "../api";
 import { Link } from "react-router-dom";
 import "../Style/Admin/Bookings.css";
 import Sidebar from "./Sidebar";
+>>>>>>> master
 export default function Bookings() {
   const [bookings, setBookings] = useState([]);
 
@@ -56,11 +64,39 @@ export default function Bookings() {
 
   function updateStatus(id, status) {
     api.put("/bookings/" + id, { status }).then((res) => {
+<<<<<<< HEAD
+      setBookings(bookings.map(b => b._id === id ? res.data : b));
+=======
       setBookings(bookings.map((b) => (b._id === id ? res.data : b)));
+>>>>>>> master
     });
   }
 
   return (
+<<<<<<< HEAD
+    <div className="admin-page">
+      <h1>Bookings</h1>
+
+      {bookings.map((b) => (
+        <div key={b._id} className="booking-card">
+          <h3>{b.trekTitle}</h3>
+          <p><b>Name:</b> {b.name}</p>
+          <p><b>Email:</b> {b.email}</p>
+          <p><b>Phone:</b> {b.phone}</p>
+          <p><b>People:</b> {b.numberOfPeople}</p>
+          <p><b>Date:</b> {b.date}</p>
+          <p><b>Status:</b> {b.status}</p>
+
+          <button onClick={() => updateStatus(b._id, "approved")}>
+            Approve
+          </button>
+
+          <button onClick={() => updateStatus(b._id, "rejected")}>
+            Reject
+          </button>
+        </div>
+      ))}
+=======
     <div className="admin-container">
       {/* SIDEBAR */}
      
@@ -117,6 +153,7 @@ export default function Bookings() {
           ))}
         </div>
       </main>
+>>>>>>> master
     </div>
   );
 }

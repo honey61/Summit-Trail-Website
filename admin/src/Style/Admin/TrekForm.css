@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+.admin-page {
+  padding: 30px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.trek-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 600px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #dce4e8;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+=======
 /* Main layout */
 .admin-container {
   display: flex;
@@ -30,11 +50,18 @@
   margin-top: 15px;
   font-weight: 600;
   color: #344054;
+>>>>>>> master
 }
 
 .trek-form input,
 .trek-form select,
 .trek-form textarea {
+<<<<<<< HEAD
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+=======
   width: 100%;
   padding: 12px;
   border-radius: 10px;
@@ -43,11 +70,31 @@
   background: white;
   font-size: 15px;
   transition: 0.2s;
+>>>>>>> master
 }
 
 .trek-form input:focus,
 .trek-form select:focus,
 .trek-form textarea:focus {
+<<<<<<< HEAD
+  border-color: #2a7a4a;
+}
+
+.trek-form button {
+  padding: 12px;
+  background: #2a7a4a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.25s;
+}
+
+.trek-form button:hover {
+  opacity: 0.9;
+=======
   border-color: #1b63d8;
   box-shadow: 0 0 4px rgba(27, 99, 216, 0.3);
 }
@@ -90,4 +137,5 @@
 
 .save-btn:hover {
   background: #0f4abf;
+>>>>>>> master
 }
