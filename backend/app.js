@@ -9,6 +9,8 @@ const authRoutes = require('./routes/adminAuth');
 const contactRoutes = require('./routes/contactRoutes');
 const quizRoutes = require('./routes/quizRoutes');
 const uploadRoutes = require("./routes/uploadRoutes");
+const hikeRoutes = require('./routes/hikeRoutes');
+const expeditionRoutes = require('./routes/expeditionRoutes');
 
 const app = express();
 app.use(cors());
@@ -21,6 +23,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/contact', contactRoutes);
 app.use('/api/quiz', quizRoutes);
 app.use("/api/upload", uploadRoutes);
+app.use('/api/hikes', hikeRoutes);
+app.use('/api/expeditions', expeditionRoutes);
 
 
 app.get('/', (req,res) => res.send('Summit Backend Running'));
